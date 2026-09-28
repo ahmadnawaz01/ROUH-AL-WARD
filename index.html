@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rouh Al Ward | Spa & Wellness Riyadh - روح الورد</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Welcome to Rouh Al Ward Spa & Wellness in Riyadh. Connect with us on WhatsApp for bookings, exclusive relaxation packages, and special Sunday offers." />
+  <meta name="theme-color" content="#0d0b09" />
+  <meta property="og:title" content="Rouh Al Ward | Spa & Wellness Riyadh" />
+  <meta property="og:description" content="Experience pure luxury and wellness in Riyadh. Chat with us on WhatsApp for direct bookings." />
+  <meta property="og:image" content="/logo.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Luxury Serif & Arabic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+</head>
+<body>
+  <!-- Ambient Particle Canvas -->
+  <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Background Decorative Glowing Orbs -->
+  <div class="glow-orb orb-top" aria-hidden="true"></div>
+  <div class="glow-orb orb-bottom" aria-hidden="true"></div>
+  <div class="glow-orb orb-center" aria-hidden="true"></div>
+
+  <!-- Main Luxury Wrapper -->
+  <main class="page-wrapper">
+    <!-- Top Action Bar -->
+    <header class="top-nav">
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span class="status-text" id="statusText">Available for Bookings</span>
+      </div>
+      <button id="langToggle" class="lang-toggle-btn" aria-label="Toggle language">
+        <span class="lang-icon">🌐</span>
+        <span id="langLabel">العربية</span>
+      </button>
+    </header>
+
+    <!-- Center Card -->
+    <section class="luxury-card" id="mainCard">
+      <div class="card-gold-border"></div>
+      
+      <!-- Logo Container with Animated Gold Rings -->
+      <div class="logo-wrapper">
+        <div class="logo-glow-ring ring-outer"></div>
+        <div class="logo-glow-ring ring-inner"></div>
+        <div class="logo-circle">
+          <img src="/logo.jpg" alt="Rouh Al Ward Spa & Wellness Riyadh Logo" class="brand-logo" id="brandLogoImg" />
+        </div>
+      </div>
+
+      <!-- Brand Header -->
+      <header class="brand-header">
+        <h1 class="brand-title" id="brandTitle">ROUH AL WARD</h1>
+        <p class="brand-tagline" id="brandTagline">SPA &amp; WELLNESS</p>
+        <div class="brand-divider">
+          <span class="divider-line"></span>
+          <span class="divider-gem">◆</span>
+          <span class="divider-line"></span>
+        </div>
+        <p class="brand-location" id="brandLocation">RIYADH • الرياض</p>
+        <p class="brand-arabic-name" id="brandArabicName">روح الورد</p>
+      </header>
+
+
+      <!-- Main WhatsApp Action Button (Primary CTA) -->
+      <div class="cta-container">
+        <a id="whatsappCtaBtn" href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+          <div class="btn-shimmer"></div>
+          <div class="btn-icon-wrapper">
+            <svg class="whatsapp-svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.981.536 1.838.814 2.796.815h.005c3.18 0 5.767-2.587 5.768-5.766.001-3.182-2.585-5.769-5.769-5.769zm3.364 8.163c-.144.405-.837.774-1.17.822-.312.043-.634.075-1.748-.372-1.325-.533-2.196-1.849-2.261-1.936-.064-.087-.525-.705-.525-1.345 0-.64.333-.956.452-1.085.12-.13.26-.162.347-.162.086 0 .173.001.248.005.08.004.186-.03.29.223.109.263.372.912.404.978.033.066.054.143.011.23-.043.087-.066.142-.13.218-.066.076-.138.169-.197.228-.066.065-.135.136-.058.268.077.132.343.566.736.915.507.45 1.002.628 1.134.704.133.076.21.066.287-.022.078-.087.333-.388.422-.521.088-.134.177-.111.297-.067.12.044.757.357.887.422.13.066.217.098.249.153.033.054.033.315-.11.72zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.957-1.399C8.423 21.498 10.153 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+            </svg>
+          </div>
+          <div class="btn-text-wrapper">
+            <span class="btn-main-label" id="btnMainLabel">Chat on WhatsApp</span>
+            <span class="btn-sub-label" id="btnSubLabel">Direct Booking &amp; Instant Support</span>
+          </div>
+          <div class="btn-ripple"></div>
+        </a>
+
+        <!-- Copy Number Fallback & Info -->
+        <div class="phone-display-container">
+          <span class="phone-label" id="phoneLabel">Direct Number:</span>
+          <button class="phone-copy-btn" id="copyPhoneBtn" title="Click to copy phone number">
+            <span id="phoneDisplay">+966 548060848</span>
+            <span class="copy-icon" id="copyIcon">📋</span>
+            <span class="copy-tooltip" id="copyTooltip">Copied!</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+      <p class="copyright">
+        © <span id="currentYear"></span> <strong id="footerBrand">ROUH AL WARD SPA &amp; WELLNESS</strong>. All Rights Reserved.
+      </p>
+      <p class="footer-location" id="footerLocation">Riyadh, Kingdom of Saudi Arabia • الرياض، المملكة العربية السعودية</p>
+    </footer>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
