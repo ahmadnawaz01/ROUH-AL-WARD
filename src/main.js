@@ -1,6 +1,7 @@
 /**
  * Rouh Al Ward Spa & Wellness - Main Application Logic
- * Integrates environment variables, interactive particle system, language toggle, and WhatsApp routing.
+ * Integrates environment variables, interactive particle system, language toggle, WhatsApp routing,
+ * and Snapchat Pixel event tracking.
  */
 
 // 1. Read Environment Variables with Safe Fallbacks
@@ -69,6 +70,15 @@ function buildWhatsAppUrl(message) {
   return `https://wa.me/${phone}?text=${encodedMsg}`;
 }
 
+// 3b. Snapchat Pixel — Safe WhatsApp button event tracker
+function fireSnapchatWhatsAppEvent() {
+  if (typeof window.snaptr === 'function') {
+    window.snaptr('track', 'CUSTOM_EVENT', {
+      custom_event_name: 'WHATSAPP_BUTTON_CLICK'
+    });
+  }
+}
+
 // 4. Update WhatsApp CTA Link
 function updateWhatsAppCta(message) {
   selectedMessage = message || CONFIG.defaultMessage;
@@ -95,6 +105,17 @@ function initApp() {
 
   // Initial WhatsApp Link
   updateWhatsAppCta(CONFIG.defaultMessage);
+
+  // Snapchat Pixel — Intercept WhatsApp CTA clicks to fire tracking event
+  const whatsappBtn = document.getElementById('whatsappCtaBtn');
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      fireSnapchatWhatsAppEvent();
+      const whatsappUrl = whatsappBtn.href || buildWhatsAppUrl(selectedMessage);
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    });
+  }
 
   // Quick Inquiry Chips Handling
   const chipBtns = document.querySelectorAll('.chip-btn');

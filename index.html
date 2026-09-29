@@ -20,6 +20,20 @@
 
   <link rel="stylesheet" href="/src/style.css" />
   <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+
+  <!-- Snapchat Pixel Base Code -->
+  <script type="text/javascript">
+    (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
+    {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
+    a.queue=[];var s='script';r=t.createElement(s);r.async=!0;
+    r.src=n;var u=t.getElementsByTagName(s)[0];
+    u.parentNode.insertBefore(r,u);})(window,document,
+    'https://sc-static.net/scevent.min.js');
+
+    snaptr('init', 'e6454694-c172-496b-a6ed-49b9e909290a');
+    snaptr('track', 'PAGE_VIEW');
+  </script>
+  <!-- End Snapchat Pixel Base Code -->
 </head>
 <body>
   <!-- Ambient Particle Canvas -->
